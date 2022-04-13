@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--        Form View-->
+        <record id="department_form_view" model="ir.ui.view">
+            <field name="name">department.form.view</field>
+            <field name="model">department</field>
+            <field name="arch" type="xml">
+                <form>
+                    <label for="name" class="oe_edit_only"/>
+                    <h1><field name="name" placeholder="Department Name"/></h1>
+                    <field name="field_list"/>
+                </form>
+            </field>
+        </record>
+
+<!--        Tree View-->
+        <record id="department_tree_view" model="ir.ui.view">
+            <field name="name">department.tree.view</field>
+            <field name="model">department</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="field_list"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        Action -->
+        <record id="department_action" model="ir.actions.act_window">
+            <field name="name">Department</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">department</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Knowledge" id="knowledge" />
+        <menuitem name="Department" id="department_menu" parent="knowledge" sequence="1" action="department_action"/>
+    </data>
+</odoo>

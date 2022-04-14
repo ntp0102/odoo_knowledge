@@ -71,7 +71,7 @@
             </field>
         </record>
 
-        <menuitem name="Posts" id="menu_knowledge_posts" parent="knowledge" action="knowledge_posts_act_window"/>
-
+        <menuitem name="Knowledge" id="knowledge" />
+        <menuitem name="Posts" id="menu_knowledge_posts" parent="knowledge" sequence="2" action="knowledge_posts_act_window"/>
     </data>
 </odoo>

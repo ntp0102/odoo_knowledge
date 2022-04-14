@@ -21,7 +21,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="field_list"/>
+                    <field name="field_list" widget="many2many_tags"/>
                 </tree>
             </field>
         </record>

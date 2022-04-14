@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--&lt;!&ndash;        Form View&ndash;&gt;-->
+<!--        <record id="create_group_form_view" model="ir.ui.view">-->
+<!--            <field name="name">create.group.form.view</field>-->
+<!--            <field name="model">res.groups</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form>-->
+<!--                    <label for="group_name" class="oe_edit_only"/>-->
+<!--                    <h1><field name="group_name"/></h1>-->
+<!--                    <label for="user"/>-->
+<!--                    <h2><field name="user" widget="many2many_tags"/></h2>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--&lt;!&ndash;        Tree View&ndash;&gt;-->
+<!--        <record id="create_group_tree_view" model="ir.ui.view">-->
+<!--            <field name="name">create.group.tree.view</field>-->
+<!--            <field name="model">create.group</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="group_name"/>-->
+<!--                    <field name="user" widget="many2many_tags"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--&lt;!&ndash;        Action &ndash;&gt;-->
+<!--        <record id="create_group_action" model="ir.actions.act_window">-->
+<!--            <field name="name">create_group</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">create.group</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--        </record>-->
+
+        <menuitem name="Knowledge" id="knowledge" />
+        <menuitem name="Config" id="config_menu" parent="knowledge" sequence="10"/>
+        <menuitem name="Group" id="group_menu" parent="config_menu" sequence="2" action="base.action_res_groups"/>
+    </data>
+</odoo>

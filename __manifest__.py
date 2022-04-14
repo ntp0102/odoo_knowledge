@@ -28,10 +28,10 @@
         # 'views/views.xml',
         # 'views/templates.xml',
         'views/department_views.xml',
-        # 'views/dept_fields_views.xml',
         'views/create_group_views.xml',
         'views/create_category_views.xml',
         'security/security.xml',
+        'views/knowledge_posts_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

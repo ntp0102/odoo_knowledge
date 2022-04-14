@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="knowledge_posts_form_view" model="ir.ui.view">
+            <field name="name">knowledge.posts.form.view</field>
+            <field name="model">knowledge.posts</field>
+            <field name="arch" type="xml">
+                <form string="Posts">
+                    <sheet>
+                        <h1 class="text-center"><field name="title" placeholder="Nhập tiêu đề bài viết" required="1"/></h1>
+                        <group>
+                            <field name="date_of_writing" readonly="1"/>
+                            <field name="tac_gia" readonly="1"/>
+                        </group>
+                        <h4 class="text-center">NỘI DUNG</h4>
+                        <field name="content" widget="html" placeholder="Viết nội dung - Nhấn / để chọn tác vụ" required="1"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--        <record id="knowledge_posts_tree_view" model="ir.ui.view">-->
+        <!--            <field name="name">Knowledge posts</field>-->
+        <!--            <field name="model">knowledge.posts</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <tree string="ModelTitle">-->
+        <!--                    <field name="title"/>-->
+        <!--                    <field name="date_of_writing"/>-->
+        <!--                </tree>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="knowledge_posts_kanban_view" model="ir.ui.view">
+            <field name="name">Knowledge posts</field>
+            <field name="model">knowledge.posts</field>
+            <field name="arch" type="xml">
+                <kanban string="ModelTitle" class="o_res_partner_kanban">
+                    <field name="title"/>
+                    <field name="date_of_writing"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li style="color: #ff0000; font-size: 22px;">
+                                            <field name="title"/>
+                                        </li>
+                                        <li>
+                                            Chỉnh sửa lần cuối: <field name="date_of_writing"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="knowledge_posts_act_window" model="ir.actions.act_window">
+            <field name="name">Posts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">knowledge.posts</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Posts" id="menu_knowledge_posts" parent="knowledge" action="knowledge_posts_act_window"/>
+
+    </data>
+</odoo>

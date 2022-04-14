@@ -13,5 +13,10 @@ class Dept_Fields(models.Model):
     @api.model
     def create(self, values):
         """Override default Odoo create function and extend."""
-
+        vals = {
+            'field_list': self.dependent
+        }
+        self.env['department'].browse(self.dependent.ids).write(vals)
+        print('self.dependent: + ', self.browse(self.name))
+        print('type----', type(self.browse(self.name)))
         return super(Dept_Fields, self).create(values)

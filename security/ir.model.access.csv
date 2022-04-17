@@ -1,4 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_create_category,access.create.category,model_create_category,base.group_user,1,1,1,1
 access_department,access.department,model_department,,1,0,0,0
-access_knowledge_posts,access.knowledge.posts,model_knowledge_posts,base.group_user,1,1,1,1
+access_create_category,access.create.category,model_create_category,base.group_user,0,0,0,0
+access_create_category,access.create.category,model_create_category,group_department_name_management,1,1,1,1
+access_access_right,access.access.right,model_access_right,base.group_user,0,0,0,0
+access_access_right,access.access.right,model_access_right,group_department_name_management,1,1,1,1
+access_knowledge_posts,access.knowledge.posts,model_knowledge_posts,base.group_user,1,1,1,0

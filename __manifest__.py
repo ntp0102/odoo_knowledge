@@ -31,7 +31,8 @@
         'views/create_group_views.xml',
         'views/create_category_views.xml',
         'security/security.xml',
-        'views/knowledge_posts_view.xml'
+        'views/knowledge_posts_view.xml',
+        'views/access_right_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

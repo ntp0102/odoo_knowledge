@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--        Form View-->
+        <record id="access_right_form_view" model="ir.ui.view">
+            <field name="name">access.right.form.view</field>
+            <field name="model">access.right</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="knowledge_posts"/>
+                    </group>
+                    <group>
+                        <field name="res_group"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+<!--        Tree View-->
+        <record id="access_right_tree_view" model="ir.ui.view">
+            <field name="name">access.right.tree.view</field>
+            <field name="model">access.right</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="knowledge_posts"/>
+                    <field name="res_group"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        Action -->
+        <record id="access_right_action" model="ir.actions.act_window">
+            <field name="name">access_right</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">access.right</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Knowledge" id="knowledge" />
+        <menuitem name="Config" id="config_menu" parent="knowledge" sequence="10"/>
+        <menuitem name="Access Right" id="access_right_menu" parent="config_menu" sequence="3"
+                  action="access_right_action"/>
+
+    </data>
+</odoo>

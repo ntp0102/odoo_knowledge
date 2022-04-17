@@ -7,8 +7,13 @@
             <field name="model">knowledge.posts</field>
             <field name="arch" type="xml">
                 <form string="Posts">
+                    <group>
+<!--                        <field name="res_group" attrs="{'invisible':[('check_admin_tac_gia', '=', True)]}"-->
+<!--                        <field name="res_group" attrs="{'invisible':[('check_admin_tac_gia','=',False)]}"/>-->
+<!--                        <field name="res_group" attrs="{'invisible':[('check_admin_tac_gia','=',False)]}"/>-->
+                    </group>
                     <sheet>
-                        <h1 class="text-center"><field name="title" placeholder="Nhập tiêu đề bài viết" required="1"/></h1>
+                        <h1 class="text-center"><field name="name" placeholder="Nhập tiêu đề bài viết" required="1"/></h1>
                         <group>
                             <field name="date_of_writing" readonly="1"/>
                             <field name="tac_gia" readonly="1"/>
@@ -36,7 +41,8 @@
             <field name="model">knowledge.posts</field>
             <field name="arch" type="xml">
                 <kanban string="ModelTitle" class="o_res_partner_kanban">
-                    <field name="title"/>
+<!--                     attrs="{'invisible':[('tac_gia','not in',res_group)]}"-->
+                    <field name="name"/>
                     <field name="date_of_writing"/>
                     <templates>
                         <t t-name="kanban-box">
@@ -44,7 +50,7 @@
                                 <div class="oe_kanban_details">
                                     <ul>
                                         <li style="color: #ff0000; font-size: 22px;">
-                                            <field name="title"/>
+                                            <field name="name"/>
                                         </li>
                                         <li>
                                             Chỉnh sửa lần cuối: <field name="date_of_writing"/>
